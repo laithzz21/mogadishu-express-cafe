@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="Mogadishu Express Cafe — halal Somali cafe in Columbus, Ohio. Rice with goat meat, chicken suqaar, jabati, kalaamudo, fried tilapia and Somali tea. 1981 Zettler Center Drive, open daily 10:30 AM–10:00 PM." />
+    <link rel="icon" href="data:," />
+    <title>Mogadishu Express Cafe — Halal Somali Food in Columbus, Ohio</title>
+    <style>
+      :root {
+        --bg: #fff8ec;
+        --bg-soft: #fdf0d3;
+        --surface: #ffffff;
+        --ink: #2b1d0e;
+        --ink-soft: #6d5a41;
+        --line: #ecd9b8;
+        --terra: #b4551f;
+        --terra-deep: #8a3d12;
+        --terra-soft: #fbe9da;
+        --green: #2e6b34;
+        --green-soft: #e6f2e4;
+        --gold: #e9a13b;
+        --shadow: 0 10px 30px rgba(90, 52, 10, 0.12);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1d1712;
+          --bg-soft: #282019;
+          --surface: #2b2119;
+          --ink: #f7ecd9;
+          --ink-soft: #c9b394;
+          --line: #453626;
+          --terra: #ff9a5c;
+          --terra-deep: #ffb183;
+          --terra-soft: #40231a;
+          --green: #8fd694;
+          --green-soft: #24381f;
+          --gold: #f2b95e;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--terra); }
+      h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; line-height: 1.12; margin: 0; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+      .topbar {
+        background: var(--terra-deep);
+        color: #fff3e2;
+        font-size: 0.9rem;
+      }
+      .topbar .wrap {
+        display: flex; flex-wrap: wrap; gap: 6px 22px;
+        padding-top: 9px; padding-bottom: 9px;
+        align-items: center; justify-content: space-between;
+      }
+      .topbar a { color: #ffe1b8; text-decoration: none; font-weight: 600; }
+      .open-badge {
+        display: inline-flex; align-items: center; gap: 7px;
+        font-weight: 700;
+      }
+      .open-dot {
+        width: 9px; height: 9px; border-radius: 50%;
+        background: #7ee2a0;
+        box-shadow: 0 0 0 3px rgba(126, 226, 160, 0.3);
+      }
+      .open-dot.closed { background: #ffb199; box-shadow: 0 0 0 3px rgba(255, 177, 153, 0.3); }
+
+      .hero {
+        background: linear-gradient(115deg, #7c3410 0%, #b4551f 55%, #d98a2b 100%);
+        color: #fff8ec;
+        padding: 58px 0 54px;
+      }
+      .hero-eyebrow {
+        display: inline-block;
+        background: rgba(255, 248, 236, 0.16);
+        border: 1px solid rgba(255, 248, 236, 0.4);
+        border-radius: 999px;
+        padding: 7px 14px;
+        font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      .hero h1 {
+        font-size: clamp(2.6rem, 8vw, 4.4rem);
+        margin: 18px 0 8px;
+      }
+      .hero h1 em { font-style: italic; color: #ffd98a; }
+      .hero-sub {
+        font-size: clamp(1.05rem, 2.6vw, 1.28rem);
+        color: #ffedd2;
+        max-width: 36em;
+        margin: 10px 0 0;
+      }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+      .btn {
+        display: inline-block;
+        padding: 13px 22px;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+      .btn-light { background: #fff8ec; color: var(--terra-deep); }
+      .btn-outline {
+        border: 2px solid rgba(255, 248, 236, 0.75);
+        color: #fff8ec;
+      }
+
+      section { padding: 46px 0; }
+      .section-head { margin-bottom: 22px; }
+      .section-head h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); }
+      .section-head p { color: var(--ink-soft); margin: 8px 0 0; max-width: 60em; }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 { font-size: 1.25rem; margin-bottom: 6px; }
+      .card p { color: var(--ink-soft); margin: 0; }
+
+      .menu-group { margin-top: 30px; }
+      .menu-group:first-of-type { margin-top: 0; }
+      .menu-group h3 {
+        font-size: 1.35rem;
+        padding-bottom: 10px;
+        border-bottom: 2px solid var(--gold);
+        margin-bottom: 6px;
+      }
+      .dish {
+        display: flex; justify-content: space-between; gap: 16px;
+        padding: 13px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .dish:last-child { border-bottom: 0; }
+      .dish-name { font-weight: 700; }
+      .dish-desc { color: var(--ink-soft); font-size: 0.94rem; margin-top: 2px; }
+      .dish-price { font-weight: 700; color: var(--terra); white-space: nowrap; }
+      .tag {
+        display: inline-block;
+        font-size: 0.75rem; font-weight: 700;
+        background: var(--green-soft); color: var(--green);
+        border-radius: 999px; padding: 2px 9px;
+        margin-left: 8px; vertical-align: middle;
+      }
+      .popular { color: var(--terra); font-size: 0.85rem; font-weight: 700; }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+      }
+      .info-box {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+        box-shadow: var(--shadow);
+      }
+      .info-box h3 { font-size: 1.3rem; margin-bottom: 12px; }
+      .hours-row {
+        display: flex; justify-content: space-between; gap: 12px;
+        padding: 7px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .hours-row:last-child { border-bottom: 0; }
+      .hours-row.today { font-weight: 700; color: var(--terra); }
+      .info-box p { margin: 6px 0; color: var(--ink-soft); }
+      .info-box p strong { color: var(--ink); }
+      .call-btn {
+        display: inline-block; margin-top: 14px;
+        background: var(--terra); color: #fff;
+        padding: 12px 22px; border-radius: 999px;
+        font-weight: 700; text-decoration: none;
+      }
+
+      footer {
+        background: var(--bg-soft);
+        border-top: 1px solid var(--line);
+        padding: 30px 0 40px;
+        color: var(--ink-soft);
+        font-size: 0.94rem;
+      }
+      footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 28px; justify-content: space-between; }
+    </style>
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <span class="open-badge"><span class="open-dot" id="openDot"></span><span id="openText">Checking hours…</span></span>
+        <span>Halal &middot; 1981 Zettler Center Dr, Columbus, OH &middot; <a href="tel:+16147845609">(614) 784-5609</a></span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="wrap">
+        <span class="hero-eyebrow">Halal &middot; Somali Cafe &middot; Columbus, Ohio</span>
+        <h1>Mogadishu <em>Express</em> Cafe</h1>
+        <p class="hero-sub">Authentic Somali cooking in Columbus — fragrant spiced rice, tender goat meat, fresh jabati and hot Somali tea, served every day.</p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="#menu">See the menu</a>
+          <a class="btn btn-outline" href="tel:+16147845609">Call (614) 784-5609</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Homemade Somali food, made fresh daily</h2>
+          <p>A welcoming neighborhood cafe for Somali classics — from slow-cooked goat meat with basbaas rice to jabati sandwiches and kalaamudo, all 100% halal.</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <h3>100% Halal</h3>
+            <p>Every dish on the menu is halal, prepared the traditional Somali way.</p>
+          </div>
+          <div class="card">
+            <h3>Dine-in &amp; takeout</h3>
+            <p>Stop by for lunch or dinner, or grab your favorites to go. Delivery is available on DoorDash and Uber Eats.</p>
+          </div>
+          <div class="card">
+            <h3>Somali tea &amp; samosas</h3>
+            <p>Local favorites: freshly brewed spiced Somali tea and crisp, savory samosas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" style="padding-top: 0;">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Menu</h2>
+          <p>Our most-ordered dishes. Prices as listed for dine-in and takeout.</p>
+        </div>
+
+        <div class="menu-group">
+          <h3>Rice &amp; Pasta</h3>
+          <div class="dish">
+            <div><div class="dish-name">Rice with Goat Meat <span class="popular">★ Most ordered</span></div>
+            <div class="dish-desc">Fragrant spiced rice served with tender goat meat.</div></div>
+            <div class="dish-price">$17.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Pasta with Goat Meat</div>
+            <div class="dish-desc">Somali-style spaghetti with goat meat.</div></div>
+            <div class="dish-price">$17.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Chicken Suqaar with Rice</div>
+            <div class="dish-desc">Diced chicken sautéed with vegetables and seasoned spices, served with rice.</div></div>
+            <div class="dish-price">$15.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Chicken Leg with Rice or Pasta</div>
+            <div class="dish-desc">Your choice of rice or pasta with a chicken leg.</div></div>
+            <div class="dish-price">$15.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Pasta with Beef Soup</div>
+            <div class="dish-desc">Spaghetti with suuqo (beef soup).</div></div>
+            <div class="dish-price">$15.49</div>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <h3>Jabati &amp; Sandwiches</h3>
+          <div class="dish">
+            <div><div class="dish-name">Jabati with Chicken Suqaar <span class="popular">★ Most ordered</span></div>
+            <div class="dish-desc">Flaky flatbread with chicken suqaar, cooked with vegetables and seasoned spices.</div></div>
+            <div class="dish-price">$14.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Jabati Sandwich</div>
+            <div class="dish-desc">Chicken or beef in fresh jabati flatbread.</div></div>
+            <div class="dish-price">$9.99</div>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <h3>Traditional Somali</h3>
+          <div class="dish">
+            <div><div class="dish-name">Kalaamudo / Galaamudo</div>
+            <div class="dish-desc">Traditional Somali dish — your choice of meat.</div></div>
+            <div class="dish-price">$20.99</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Ambulo / Cambuulo</div>
+            <div class="dish-desc">Made with corn and beans. <span class="tag">Vegetarian</span></div></div>
+            <div class="dish-price">$10.99</div>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <h3>Seafood</h3>
+          <div class="dish">
+            <div><div class="dish-name">Fried Tilapia (Malaay) with Soor or Ugali</div>
+            <div class="dish-desc">Crispy fried tilapia served with soor or ugali.</div></div>
+            <div class="dish-price">$17.49</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Big Fish with Fries or Salad</div>
+            <div class="dish-desc">Whole fried fish with fries or a fresh salad.</div></div>
+            <div class="dish-price">$10.99</div>
+          </div>
+        </div>
+
+        <div class="menu-group">
+          <h3>Drinks &amp; Snacks</h3>
+          <div class="dish">
+            <div><div class="dish-name">Somali Tea</div>
+            <div class="dish-desc">Freshly brewed spiced tea — a house favorite.</div></div>
+            <div class="dish-price">—</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Samosa</div>
+            <div class="dish-desc">Crisp pastry filled with seasoned meat or vegetables.</div></div>
+            <div class="dish-price">—</div>
+          </div>
+          <div class="dish">
+            <div><div class="dish-name">Fanta (Bottle)</div>
+            <div class="dish-desc">Chilled soft drink.</div></div>
+            <div class="dish-price">$3.49</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="wrap">
+        <div class="info-grid">
+          <div class="info-box">
+            <h3>Hours</h3>
+            <div id="hoursList">
+              <div class="hours-row" data-day="0"><span>Sunday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="1"><span>Monday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="2"><span>Tuesday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="3"><span>Wednesday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="4"><span>Thursday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="5"><span>Friday</span><span>10:30 AM – 10:00 PM</span></div>
+              <div class="hours-row" data-day="6"><span>Saturday</span><span>10:30 AM – 10:30 PM</span></div>
+            </div>
+          </div>
+          <div class="info-box">
+            <h3>Find us</h3>
+            <p><strong>Mogadishu Express Cafe, LLC</strong></p>
+            <p>1981 Zettler Center Drive<br />Columbus, OH 43223</p>
+            <p><strong>Phone:</strong> <a href="tel:+16147845609">(614) 784-5609</a></p>
+            <p><strong>Email:</strong> <a href="mailto:mogadishue@gmail.com">mogadishue@gmail.com</a></p>
+            <p>Find us on Facebook and order delivery on DoorDash or Uber Eats.</p>
+            <a class="call-btn" href="tel:+16147845609">Tap to call</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <span>Mogadishu Express Cafe — Halal Somali food in Columbus, Ohio</span>
+        <span>1981 Zettler Center Dr, Columbus, OH 43223 &middot; (614) 784-5609</span>
+      </div>
+    </footer>
+
+    <script>
+      // Open-now indicator, Columbus time (America/New_York).
+      (function () {
+        var dot = document.getElementById("openDot");
+        var text = document.getElementById("openText");
+        try {
+          var now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
+          var day = now.getDay();
+          var mins = now.getHours() * 60 + now.getMinutes();
+          var open = 10 * 60 + 30; // 10:30 AM
+          var close = (day === 6) ? 22 * 60 + 30 : 22 * 60; // Sat 10:30 PM, else 10:00 PM
+          var isOpen = mins >= open && mins < close;
+          dot.classList.toggle("closed", !isOpen);
+          text.textContent = isOpen ? "Open now · closes " + (day === 6 ? "10:30 PM" : "10:00 PM") : "Closed · opens 10:30 AM";
+          var row = document.querySelector('.hours-row[data-day="' + day + '"]');
+          if (row) row.classList.add("today");
+        } catch (e) {
+          text.textContent = "Open daily 10:30 AM – 10:00 PM";
+        }
+      })();
+    </script>
+  </body>
+</html>
